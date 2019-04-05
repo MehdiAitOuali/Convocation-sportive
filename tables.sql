@@ -8,7 +8,7 @@ CREATE TABLE `CATEGORIE` (
    
 );
 
-insert into categorie values('SENIORS');
+insert into  values('SENIORS');
 insert into categorie values('U17');
 insert into categorie values('U15');
 insert into categorie values('U14-F');
@@ -32,28 +32,28 @@ CREATE TABLE `EQUIPE` (
 );
 
 
-insert into categorie values('SENIORS A',1);
-insert into categorie values('SENIORS B',1);
-insert into categorie values('SENIORS C',1);
+insert into EQUIPE(NomEquipe,IDCategorie) values('SENIORS A',1);
+insert into EQUIPE(NomEquipe,IDCategorie) values('SENIORS B',1);
+insert into EQUIPE(NomEquipe,IDCategorie) values('SENIORS C',1);
 
-insert into categorie values('U17 A',2);
-insert into categorie values('U17 B',2);
+insert into EQUIPE(NomEquipe,IDCategorie) values('U17 A',2);
+insert into EQUIPE(NomEquipe,IDCategorie) values('U17 B',2);
 
-insert into categorie values('U15 A',3);
-insert into categorie values('U15 B',3);
+insert into EQUIPE(NomEquipe,IDCategorie) values('U15 A',3);
+insert into EQUIPE(NomEquipe,IDCategorie) values('U15 B',3);
 
-insert into categorie values('U14-F',4);
+insert into EQUIPE(NomEquipe,IDCategorie) values('U14-F',4);
 
-insert into categorie values('U13',5);
+insert into EQUIPE(NomEquipe,IDCategorie) values('U13',5);
 
-insert into categorie values('U11-F',6);
+insert into EQUIPE(NomEquipe,IDCategorie) values('U11-F',6);
 
-insert into categorie values('U11 A',7);
-insert into categorie values('U11 B',7);
+insert into EQUIPE(NomEquipe,IDCategorie) values('U11 A',7);
+insert into EQUIPE(NomEquipe,IDCategorie) values('U11 B',7);
 
-insert into categorie values('U9',8);
+insert into EQUIPE(NomEquipe,IDCategorie) values('U9',8);
 
-insert into categorie values('U7',9);
+insert into EQUIPE(NomEquipe,IDCategorie) values('U7',9);
 
 
 
