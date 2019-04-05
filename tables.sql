@@ -1,0 +1,8 @@
+
+
+CREATE TABLE `EQUIPE_CAT` (
+  ID_Categori INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+
+  
+   
+);
