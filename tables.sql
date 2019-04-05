@@ -8,15 +8,15 @@ CREATE TABLE `CATEGORIE` (
    
 );
 
-insert into CATEGORIE(IDCategorie) values('SENIORS');
-insert into CATEGORIE(IDCategorie) values('U17');
-insert into CATEGORIE(IDCategorie) values('U15');
-insert into CATEGORIE(IDCategorie) values('U14-F');
-insert into CATEGORIE(IDCategorie) values('U13');
-insert into CATEGORIE(IDCategorie) values('U11-F');
-insert into CATEGORIE(IDCategorie) values('U11');
-insert into CATEGORIE(IDCategorie) values('U9');
-insert into CATEGORIE(IDCategorie) values('U7');
+insert into CATEGORIE(NomCategorie) values('SENIORS');
+insert into CATEGORIE(NomCategorie) values('U17');
+insert into CATEGORIE(NomCategorie) values('U15');
+insert into CATEGORIE(NomCategorie) values('U14-F');
+insert into CATEGORIE(NomCategorie) values('U13');
+insert into CATEGORIE(NomCategorie) values('U11-F');
+insert into CATEGORIE(NomCategorie) values('U11');
+insert into CATEGORIE(NomCategorie) values('U9');
+insert into CATEGORIE(NomCategorie) values('U7');
 
 
 
@@ -54,6 +54,21 @@ insert into EQUIPE(NomEquipe,IDCategorie) values('U11 B',7);
 insert into EQUIPE(NomEquipe,IDCategorie) values('U9',8);
 
 insert into EQUIPE(NomEquipe,IDCategorie) values('U7',9);
+
+--------------- TABLE EFFECTIF -------------------------------
+CREATE TABLE `EFFECTIF` (
+  IDEffectif INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  NomJoueur VARCHAR(30),
+  PrenomJoueur VARCHAR(30),	
+  TypeLicence VARCHAR(30),
+  IDCategorie INT,
+  date_naissance DATE,
+  adresse varchar(30),
+  mobile varchar(30),
+  email varchar(30),  
+
+  FOREIGN KEY (IDCategorie) REFERENCES CATEGORIE(IDCategorie)    
+);
 
 
 
