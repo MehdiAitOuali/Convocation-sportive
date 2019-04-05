@@ -74,13 +74,11 @@ CREATE TABLE `EFFECTIF` (
 
 
 CREATE TABLE `ABSENCE` (
-  IDEffectif INT,  
+  IDEffectif INT REFERENCES Effectif(IDEffectif),  
   DateAbsence DATE,
-  Motif('Blessé','Non licencié','Suspendé'),
+  Motif enum('Blessé','Non licencié','Suspendé'),
 
-  PRIMARY KEY (IDEffectif,DateAbsence),
-
-  FOREIGN KEY (IDEffectif) REFERENCES Effectif(IDEffectif)  
+  PRIMARY KEY (IDEffectif,DateAbsence) 
     
 );
 
