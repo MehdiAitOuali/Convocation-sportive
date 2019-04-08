@@ -27,6 +27,7 @@ CREATE TABLE `EQUIPE` (
   IDEquipe INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
   NomEquipe VARCHAR(30),
   IDCategorie INT,
+  Responsable VARCHAR(50),
 
   FOREIGN KEY (IDCategorie) REFERENCES CATEGORIE(IDCategorie)
 );
@@ -80,11 +81,6 @@ CREATE TABLE `ABSENCE` (
 
   PRIMARY KEY (IDEffectif,DateAbsence)
 
-<<<<<<< HEAD
-  PRIMARY KEY (IDEffectif,DateAbsence)
-
-=======
->>>>>>> f6d08bf7bfb3dafff4a87719e05a54c9c1dcdd1e
 );
 
 --------------------- NON_CONVOC -------------------------------------------
@@ -130,5 +126,31 @@ CREATE TABLE `ARBITRAGE` (
   Dirigeant varchar(50),
 
   PRIMARY KEY (IDMatch)
+
+);
+
+--------------------- CONVOCATION -------------------------------------------
+
+CREATE TABLE `CONVOCATION` (
+
+    IDMatch INT PRIMARY KEY REFERENCES MATCHS(IDMatch),
+
+    Joueur1 INT REFERENCES EFFECTIF(IDEffectif),
+    Joueur2 INT REFERENCES EFFECTIF(IDEffectif),
+    Joueur3 INT REFERENCES EFFECTIF(IDEffectif),
+    Joueur4 INT REFERENCES EFFECTIF(IDEffectif),
+    Joueur5 INT REFERENCES EFFECTIF(IDEffectif),
+    Joueur6 INT REFERENCES EFFECTIF(IDEffectif),
+    Joueur7 INT REFERENCES EFFECTIF(IDEffectif),
+    Joueur8 INT REFERENCES EFFECTIF(IDEffectif),
+    Joueur9 INT REFERENCES EFFECTIF(IDEffectif),
+    Joueur10 INT REFERENCES EFFECTIF(IDEffectif),
+    Joueur11 INT REFERENCES EFFECTIF(IDEffectif),
+
+    Remplacant1 INT REFERENCES EFFECTIF(IDEffectif),
+    Remplacant2 INT REFERENCES EFFECTIF(IDEffectif),
+    Remplacant3 INT REFERENCES EFFECTIF(IDEffectif),
+    Remplacant4 INT REFERENCES EFFECTIF(IDEffectif),
+    Remplacant5 INT REFERENCES EFFECTIF(IDEffectif)
 
 );
