@@ -82,5 +82,23 @@ CREATE TABLE `ABSENCE` (
     
 );
 
+--------------------- NON_CONVOC -------------------------------------------
+CREATE TABLE `NON_CONVOC` (
+  IDEffectif INT REFERENCES Effectif(IDEffectif),  
+  DateC DATE,
+  Statut enum('Exempt','Absent'),
 
+  PRIMARY KEY (IDEffectif,DateC) 
+    
+);
+
+--------------------- LOGISTIQUE-------------------------------------------
+CREATE TABLE `LOGISTIQUE` (
+  IDEffectif INT REFERENCES Effectif(IDEffectif),  
+  IDMatch INT REFERENCES MATCHS(IDMatch),
+  Tache enum('Maillot','Vestiaires','Buvette','Voiture'),
+
+  PRIMARY KEY (IDEffectif,IDMatch) 
+    
+);
 
