@@ -1,6 +1,6 @@
 
 
---------------- TABLE CATEGORIE -------------------------------
+#--------------- TABLE CATEGORIE -------------------------------
 
 CREATE TABLE `CATEGORIE` (
   IDCategorie INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
@@ -20,7 +20,7 @@ insert into CATEGORIE(NomCategorie) values('U7');
 
 
 
---------------- TABLE EQUIPE -------------------------------
+ # --------------- TABLE EQUIPE -------------------------------
 
 
 CREATE TABLE `EQUIPE` (
@@ -56,7 +56,7 @@ insert into EQUIPE(NomEquipe,IDCategorie) values('U9',8);
 
 insert into EQUIPE(NomEquipe,IDCategorie) values('U7',9);
 
---------------- TABLE EFFECTIF -------------------------------
+# --------------- TABLE EFFECTIF -------------------------------
 CREATE TABLE `EFFECTIF` (
   IDEffectif INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
   NomJoueur VARCHAR(30),
@@ -71,7 +71,7 @@ CREATE TABLE `EFFECTIF` (
   FOREIGN KEY (IDCategorie) REFERENCES CATEGORIE(IDCategorie)
 );
 
---------------------- ABSENCE -------------------------------------------
+# --------------------- ABSENCE -------------------------------------------
 
 
 CREATE TABLE `ABSENCE` (
@@ -83,7 +83,7 @@ CREATE TABLE `ABSENCE` (
 
 );
 
---------------------- NON_CONVOC -------------------------------------------
+#--------------------- NON_CONVOC -------------------------------------------
 CREATE TABLE `NON_CONVOC` (
   IDEffectif INT REFERENCES Effectif(IDEffectif),
   DateC DATE,
@@ -93,7 +93,7 @@ CREATE TABLE `NON_CONVOC` (
 
 );
 
---------------------- LOGISTIQUE-------------------------------------------
+#--------------------- LOGISTIQUE-------------------------------------------
 CREATE TABLE `LOGISTIQUE` (
   IDEffectif INT REFERENCES Effectif(IDEffectif),
   IDMatch INT REFERENCES MATCHS(IDMatch),
@@ -102,7 +102,7 @@ CREATE TABLE `LOGISTIQUE` (
   PRIMARY KEY (IDEffectif,IDMatch)
 
 );
---------------------- MATCHS -------------------------------------------
+#--------------------- MATCHS -------------------------------------------
 
 CREATE TABLE `MATCHS` (
 
@@ -118,7 +118,7 @@ CREATE TABLE `MATCHS` (
   Site VARCHAR(30)
 
 );
---------------------- ARBITRAGE-------------------------------------------
+#--------------------- ARBITRAGE-------------------------------------------
 CREATE TABLE `ARBITRAGE` (
   IDMatch INT REFERENCES MATCHS(IDMatch),
   Arbitre_centre varchar(50),
@@ -129,7 +129,7 @@ CREATE TABLE `ARBITRAGE` (
 
 );
 
---------------------- CONVOCATION -------------------------------------------
+#--------------------- CONVOCATION -------------------------------------------
 
 CREATE TABLE `CONVOCATION` (
 
