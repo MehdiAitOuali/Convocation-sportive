@@ -24,25 +24,9 @@ Route::resource('categorie','CategorieController');
 
 Route::resource('equipe','EquipeController');
 
-Route::get('/absence', function(){
-	
- return view ('absence');
-}); 
+Route::get('/absence', 'AbsenceController@formulaire'); 
 
-Route::post('/absence',function (){
-	
-	$absence= new App\absence;
-	$absence->IDEffectif=1;
-	$absence->DateAbsence=request("date");
-	$absence->Motif=request("motif");
-	
-	
-	$absence->save();
-	
-	return 'Nous avons bien recu vos informations:'.request('nom')." ".request('prenom')." ".request('date')." ".request('motif');
-	
-	
-});
+Route::post('/absence','AbsenceController@traitement');
 
 Route::get('/logistique', function(){
 	
