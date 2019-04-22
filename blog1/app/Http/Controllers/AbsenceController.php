@@ -14,12 +14,12 @@ class AbsenceController extends Controller
 
 public function traitement(){
 	
-		request()->validate([
+	/*	request()->validate([
 	
 	'date'=>['required','date'],
 	
 	
-	]);
+	]);*/
 	
 	$absence= absence::create([
 	'IDEffectif' =>1,

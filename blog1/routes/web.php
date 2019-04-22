@@ -28,16 +28,9 @@ Route::get('/absence', 'AbsenceController@formulaire');
 
 Route::post('/absence','AbsenceController@traitement');
 
-Route::get('/logistique', function(){
-	
- return view ('logistique');
-}); 
+Route::get('/logistique', 'LogistiqueController@formulair'); 
 
-Route::post('/logistique',function (){
-	return 'Nous avons bien recu vos informations:'.request('nom')." ".request('prenom')." ".request('date')." ".request('tache');
-	
-	
-});
+Route::post('/logistique', 'LogistiqueController@trait');
 
 
 

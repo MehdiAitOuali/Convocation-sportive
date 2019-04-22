@@ -6,15 +6,18 @@
 
 <form action="/logistique" method="post">
 {{ csrf_field() }}
-  Nom:<br>
-  <input type="text" name="nom" >
-  <br>
-  Prenom:<br>
-  <input type="text" name="prenom" >
-  <br>
-   date:<br>
-  <input type="date" name="date">
-  <br>Tache:<br>
+  Nom:
+  <p><input type="text" name="nom" ></p>
+ 
+  Prenom:
+ <p> <input type="text" name="prenom" ></p>
+
+   date:
+<p>  <input type="date" name="date"></p>
+@if($errors->has('date'))
+  <p>{{ $errors->first('date') }}</p>
+  @endif
+Tache:
   <select name="tache">
   <option value="maillot">Maillot</option>
   <option value="vestiaires">Vestiaires</option>
