@@ -1,6 +1,7 @@
 <?php
 use App\Http\Controllers\CategorieController;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,13 +25,15 @@ Route::resource('categorie','CategorieController');
 
 Route::resource('equipe','EquipeController');
 
-Route::get('/absence', 'AbsenceController@formulaire'); 
+Route::resource('absence', 'AbsenceController');
+Route::resource('logistique', 'LogistiqueController');
+//Route::get('/absence', 'AbsenceController@create'); 
 
-Route::post('/absence','AbsenceController@traitement');
+//Route::post('/absence','AbsenceController@store');
 
-Route::get('/logistique', 'LogistiqueController@formulair'); 
+//Route::get('/logistique', 'LogistiqueController@formulair'); 
 
-Route::post('/logistique', 'LogistiqueController@trait');
+//Route::post('/logistique', 'LogistiqueController@trait');
 
 
 

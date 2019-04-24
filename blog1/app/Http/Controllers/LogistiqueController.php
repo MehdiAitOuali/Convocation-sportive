@@ -1,20 +1,41 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Logistique;
 use Illuminate\Http\Request;
 
+
 class LogistiqueController extends Controller
 {
-    public function formulair(){
-    
-     return view ('Logistique');
-}
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        //
+    }
 
-public function trait(){
-	
-		request()->validate([
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+         return view ('Logistique');
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        request()->validate([
 	
 	'date'=>['required','date'],
 	
@@ -22,8 +43,8 @@ public function trait(){
 	]);
 	
 	$logistique= logistique::create([
-	'IDEffectif' =>2,
-	'IDMatch'=>2,
+	'IDEffectif' =>3,
+	'IDMatch'=>3,
 	'Tache'=>request("tache"),
 	
 	
@@ -31,5 +52,50 @@ public function trait(){
 	
 	
 	return 'Nous avons bien recu vos informations:'.request('nom')." ".request('prenom')." ".request('date')." ".request('tache');
-}
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        //
+    }
 }
